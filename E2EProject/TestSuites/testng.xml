@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite parallel="tests" name="Suite">
+	<!-- To run the tests parallely-->
+
+	<listeners>
+		<listener class-name="resources.Listener"></listener>
+	</listeners>
+	
+	<test thread-count="5" name="Submit Order Test">
+		<classes>
+			<class name="mavenProject.HomePageTest">
+				<methods>
+					<exclude name="RegistrationTest"></exclude> <!-- For Registration-->
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test thread-count="6" name="Error Validation Test">
+		<classes>
+			<class name="mavenProject.ErrorValidationTest" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
